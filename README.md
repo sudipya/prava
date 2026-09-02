@@ -1,5 +1,43 @@
 # PRAVA Wallet
 
+![PRAVA logo](assets/prava-logo.svg)
+
+## Screens and working features
+
+The app is organized around four primary tabs and task screens. Every item below is implemented in the Expo app and is reachable by tapping the matching control or using the global search field.
+
+| Screen | Working features |
+| --- | --- |
+| Home | Multi-currency wallet cards, total balance, Pay, Receive, Add money, Convert, recent activity |
+| Rates | 20 USD currency pairs, server-fetched rates, tap-through detail charts |
+| Rate detail | Current quote, historical chart data, range selector, conversion entry point |
+| Pay someone | Amount entry, recipient chooser, QR camera scanner, phone and PRAVA UID paths |
+| Receive money | Scannable PRAVA QR, handle/UID display, share payment link, invoice/request action, phone/UID sharing |
+| Add money | Card, bank transfer, and crypto on-ramp funding paths |
+| Activity | Payment, top-up, and conversion history |
+| Settings | Profile, payment preferences, security, notifications, support, legal, logout, searchable sub-options |
+
+### Visual references
+
+The supplied design references are preserved in the implementation: light PRAVA palette, rounded cards, bottom tab bar, avatar header, QR flows, rate cards, and settings groups. When documenting a release, place simulator captures in `docs/screenshots/` using these filenames so they render on GitHub:
+
+```text
+docs/screenshots/home.png
+docs/screenshots/rates.png
+docs/screenshots/rate-detail.png
+docs/screenshots/pay.png
+docs/screenshots/receive.png
+docs/screenshots/add-money.png
+docs/screenshots/activity.png
+docs/screenshots/settings.png
+```
+
+Then add them here with standard Markdown image links, for example:
+
+```md
+![Home](docs/screenshots/home.png)
+```
+
 PRAVA is a React Native + Expo mobile wallet prototype for an India-first international payments product. The current build is intentionally provider-neutral: screens and interaction flows are working with sandbox/demo data, while real custody, KYC, FX, UPI, card, bank-transfer, QR, and crypto rails should be connected through licensed providers before launch.
 
 ## Run
