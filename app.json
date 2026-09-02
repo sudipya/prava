@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "PRAVA",
+    "slug": "prava-wallet",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": { "backgroundColor": "#05618B" },
+    "ios": { "supportsTablet": false, "bundleIdentifier": "com.prava.wallet" },
+    "android": { "package": "com.prava.wallet" },
+    "plugins": [["expo-camera", { "cameraPermission": "Allow PRAVA to use your camera to scan payment QR codes." }]]
+  }
+}
