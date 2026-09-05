@@ -4,6 +4,22 @@
 
 ## Screens and working features
 
+## Product video script
+
+> Meet PRAVA — a global money wallet built for simple international payments.
+>
+> Users can add money using cards, bank transfers, UPI, or supported crypto funding methods, then hold multiple currency balances in one secure custodial wallet.
+>
+> PRAVA connects to live foreign-exchange data so users can view current rates, historical movements, and conversion values across 20 currencies.
+>
+> Users can send money by scanning a QR code, entering a phone number, or using a PRAVA UID. They can receive money with a personal QR code, handle, phone number, or shareable payment request.
+>
+> With transaction history, rate alerts, wallet visibility controls, security settings, and support tools, PRAVA makes international money movement simple.
+>
+> PRAVA is designed as an India-first platform that can expand globally through licensed payment, custody, FX, KYC, and payout partners.
+>
+> One wallet. Many currencies. Fast global payments. This is PRAVA — money without borders.
+
 The app is organized around four primary tabs and task screens. Every item below is implemented in the Expo app and is reachable by tapping the matching control or using the global search field.
 
 | Screen | Working features |
