@@ -6,6 +6,7 @@ import { CameraView, useCameraPermissions } from 'expo-camera';
 import QRCode from 'qrcode';
 import ReceiveScreen from './ReceiveScreen';
 import { fetchLiveRates, fetchRateHistory } from './api';
+import RateActions from './RateActions';
 
 const C = { ink:'#111827', blue:'#087FB7', deep:'#07547A', pale:'#F4F7F9', line:'#DDE2E6', muted:'#87919A', card:'#FFFFFF', green:'#168B5B', red:'#D34B4B' };
 type Screen = 'home'|'rates'|'rateDetail'|'activity'|'settings'|'settingDetail'|'pay'|'receive'|'fund'|'convert';
@@ -24,7 +25,7 @@ export default function App(){
   const title = useMemo(()=>({home:'Home',rates:'Rates',rateDetail:'Rate detail',activity:'Activity',settings:'Settings',pay:'Pay',receive:'Receive',fund:'Add money',convert:'Convert'}[screen]),[screen]);
   const go=(s:Screen)=>setScreen(s); (globalThis as any).__pravaGo=go; (globalThis as any).__pravaSetting=(label:string)=>{setSelectedSetting(label);setScreen('settingDetail')};
   return <SafeAreaView style={styles.safe}><StatusBar barStyle="dark-content"/><View style={styles.app}>
-    {screen==='home' ? <Home2 go={go}/> : screen==='rates' ? <Rates go={go} selectRate={(r)=>{setSelectedRate(r);go('rateDetail')}}/> : screen==='rateDetail' ? <LiveRateDetail go={go} rate={selectedRate}/> : screen==='activity' ? <Activity go={go}/> : screen==='settings' ? <Settings go={go}/> : screen==='settingDetail' ? <SettingDetail go={go} label={selectedSetting}/> : screen==='receive' ? <ReceiveScreen go={go}/> : <Flow screen={screen} go={go} amount={amount} setAmount={setAmount} />}
+    {screen==='home' ? <Home2 go={go}/> : screen==='rates' ? <Rates go={go} selectRate={(r)=>{setSelectedRate(r);go('rateDetail')}}/> : screen==='rateDetail' ? <ScrollView contentContainerStyle={styles.content}><LiveRateDetail go={go} rate={selectedRate}/><RateActions rate={selectedRate}/></ScrollView> : screen==='activity' ? <Activity go={go}/> : screen==='settings' ? <Settings go={go}/> : screen==='settingDetail' ? <SettingDetail go={go} label={selectedSetting}/> : screen==='receive' ? <ReceiveScreen go={go}/> : <Flow screen={screen} go={go} amount={amount} setAmount={setAmount} />}
     {['home','rates','activity','settings'].includes(screen) && <Nav active={screen} go={go}/>} 
   </View></SafeAreaView>
 }
